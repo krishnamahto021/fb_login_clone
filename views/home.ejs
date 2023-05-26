@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/facebook_favicon.png">
+    <link rel="stylesheet" href="/css/home.css">
+    <title>Facebook-Log in or Sign up</title>
+</head>
+
+<body>
+    <div id="center-all">
+        <div id="image-text-container">
+            <img id='facebook_home_image' src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg"
+                alt="facebook_home_image"><br>
+            <h2 id="text">Facebook helps you connect and share with the people in your life</h2>
+        </div>
+
+        <div id="view-form">
+            <div id="sign-in-form">
+                <form action="/users/create-session">
+                    <input type="email" name="name" placeholder="Enter your email"><br>
+                    <input type="password" name="password" placeholder="Password"><br>
+                    <button id='log-in-btn' type="submit">Log in</button><br>
+                    <a id="forgotten-password" href="/user/forgotten-password">Forgotten Password ?</a>
+                </form>
+            </div>
+
+            <div id="broken-line">
+            </div>
+            <a id="create-account" href="/users/sign-up">Create Account</a>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

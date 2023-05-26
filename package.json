@@ -1,0 +1,24 @@
+{
+  "name": "fb_login_clone",
+  "version": "1.0.0",
+  "description": "This is the facebook signUp / sign In clone using passport and google-o-auth startegy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkrishna001/fb_login_clone.git"
+  },
+  "author": "Krishna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mkrishna001/fb_login_clone/issues"
+  },
+  "homepage": "https://github.com/mkrishna001/fb_login_clone#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  }
+}
