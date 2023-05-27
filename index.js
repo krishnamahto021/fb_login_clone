@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 8000;
+const db = require('./config/mongoose');
 
 // to use static folder in our project
 app.use(express.static('./assets'));
