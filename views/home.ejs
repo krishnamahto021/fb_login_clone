@@ -20,8 +20,8 @@
 
         <div id="view-form">
             <div id="sign-in-form">
-                <form action="/users/create-session">
-                    <input type="email" name="name" placeholder="Enter your email"><br>
+                <form action="/users/create-session" method="post">
+                    <input type="email" name="email" placeholder="Enter your email"><br>
                     <input type="password" name="password" placeholder="Password"><br>
                     <button id='log-in-btn' type="submit">Log in</button><br>
                     <a id="forgotten-password" href="/user/forgotten-password">Forgotten Password ?</a>
