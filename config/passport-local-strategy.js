@@ -31,13 +31,13 @@ passport.use(new LocalStrategy(
         try{
         const user = await User.findOne({email:email});
         if(!user){
-            console.log('Invalid User');
+            // console.log('Invalid User');
             return done(null,false,{message:'invalid user'});
         }else if(user.password != password){
             console.log('Invalid Password!!');
             return done(null,false,{message:'invalid password'});
         }
-        console.log('authenicated user!!')
+        // console.log('authenicated user!!');
         return done(null,user);
         }catch(err){
             console.log(`error in creating session using passport ${err}`);
