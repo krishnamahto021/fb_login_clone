@@ -27,6 +27,7 @@ module.exports.create = async function (req, res) {
         if (!user) {// user doesnot exist
             const newUser = await User.create(req.body);
             userSignUpMailer.signUp(newUser);
+            req.flash('success','Created Account Successfully!');
             return res.redirect('/');
         } else {
             console.log('User already registered!!');
@@ -40,20 +41,11 @@ module.exports.create = async function (req, res) {
 
 // to create session 
 module.exports.createSession = function (req, res) {
+    req.flash('success','logged in successfully!');
     return res.redirect('/users/profile');
 }
 
-// to destory session
-module.exports.destroySession = function (req, res) {
-    req.logout(function (err) {
-        if(err){
-        console.log('something went wrong!!', err);
-        }else{
-        console.log('Logged out successfully!!!');
-        }
-    });
-    return res.redirect('/');
-}
+
 
 // to show profile
 module.exports.profile = function (req, res) {
@@ -78,6 +70,7 @@ module.exports.forgottenPassword = async function (req, res) {
         user.save();
         // console.log(user.email);
         forgottenPasswordMailer.forgottenPassword(user.token, user);
+        req.flash('success','Reset Email sent!!');
         return res.redirect('/');
     } else {
         console.log('User not Registered!!');
@@ -110,9 +103,21 @@ module.exports.updatePassword = async function (req, res) {
         user.password = req.body.password;
         // console.log(user.password);
         user.save();
+        req.flash('success','Updated Password Successfully!')
         return res.redirect('/');
     } else {
-        console.log('unauthorized user!!');
+        // console.log('unauthorized user!!');
+        req.flash('error','Unauthorized Error!');
         return res.redirect('/');
     }
 }
+
+// to destroy session
+// to signout
+module.exports.destroySession = function(req,res){
+    req.logout(function(err){
+      req.flash('error','Something Went Wrong!!');
+    });
+    req.flash('success','Logged out successfully!!');
+    return res.redirect('/');
+  }

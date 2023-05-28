@@ -10,6 +10,11 @@ const MongoStore = require('connect-mongo');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 
+// to set notification using connect-falsh and noty
+const connectFlash = require('connect-flash');
+const customMware = require('./config/middleware');
+
+
 
 
 
@@ -51,6 +56,11 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
+
+// using connect flash to  show notification
+app.use(connectFlash());
+app.use(customMware.setFlash);
+
 
 // to set routes
 app.use('/', require('./routes'));
