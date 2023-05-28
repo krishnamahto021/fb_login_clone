@@ -7,6 +7,9 @@ const crypto = require('crypto');
 
 
 module.exports.signUp = function (req, res) {
+    if(req.isAuthenticated()){
+        return res.redirect('/users/profile');
+    }
     return res.render('user_sign_up', {
         title: 'Sign Up'
     })
@@ -43,9 +46,12 @@ module.exports.createSession = function (req, res) {
 // to destory session
 module.exports.destroySession = function (req, res) {
     req.logout(function (err) {
+        if(err){
         console.log('something went wrong!!', err);
+        }else{
+        console.log('Logged out successfully!!!');
+        }
     });
-    console.log('Logged out successfully!!!');
     return res.redirect('/');
 }
 

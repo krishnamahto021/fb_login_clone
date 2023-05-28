@@ -8,6 +8,9 @@
 </head>
 <body>
     <h1>this is user's page</h1>
+    <%if(locals.user){%>
+        <a href="/users/sign-out">sign-out</a>
+    <%}%>
     
 </body>
 </html>
