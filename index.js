@@ -10,6 +10,9 @@ const MongoStore = require('connect-mongo');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 
+// set up the authentication using google
+const googleStrategy = require('./config/passport-google-oauth-2-strategy');
+
 // to set layout
 const expressLayouts = require('express-ejs-layouts');
 // to set cookie parser

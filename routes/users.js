@@ -14,6 +14,10 @@ router.post('/forgotten-password',usersController.forgottenPassword);
 router.get('/update-password/:id',usersController.updatePasswordForm);
 router.post('/update-password',usersController.updatePassword);
 
+//  route for sign up or sign in the user via google
+router.get('/auth/google',passport.authenticate('google',{scope:['email','profile']}));
+router.get('/auth/google/callback',passport.authenticate('google',{failureRedirect:'/'}),usersController.createSession);
+
 
 router.get('/sign-out',usersController.destroySession);
 
