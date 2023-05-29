@@ -13,7 +13,7 @@ module.exports.forgottenPassword = function(token,user){
         if(err){
             console.log(`error in sending mail ${err}`);
         }else{
-        console.log(`message sent ${info}`);
+        // console.log(`message sent ${info}`);
         }
     })
 }

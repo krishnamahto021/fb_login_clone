@@ -24,17 +24,20 @@ passport.deserializeUser(async function(id,done){
 // authentication using passport
 passport.use(new LocalStrategy(
     {
-    usernameField:'email',
+        usernameField : 'email',
+        passReqToCallback:true
     },
-    async function(email,password,done){
+    async function(req,email,password,done){
         // find a user and establish it identity
         try{
         const user = await User.findOne({email:email});
         if(!user){
             // console.log('Invalid User');
+            req.flash('error','Invalid Email');
             return done(null,false,{message:'invalid user'});
         }else if(user.password != password){
-            console.log('Invalid Password!!');
+            // console.log('Invalid Password!!');
+            req.flash('error','Invalid Password');
             return done(null,false,{message:'invalid password'});
         }
         // console.log('authenicated user!!');

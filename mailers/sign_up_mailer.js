@@ -12,6 +12,6 @@ module.exports.signUp = function(user){
         if(err){
             console.log(`error in sending mail ${err}`);
         }
-        console.log(`message sent ${info}`);
+        // console.log(`message sent ${info}`);
     })
 }

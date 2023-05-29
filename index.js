@@ -10,20 +10,23 @@ const MongoStore = require('connect-mongo');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 
+// to set layout
+const expressLayouts = require('express-ejs-layouts');
+// to set cookie parser
+app.use(express.urlencoded());
+
 // to set notification using connect-falsh and noty
 const connectFlash = require('connect-flash');
 const customMware = require('./config/middleware');
 
-
-
-
-
-// to set cookie parser
-app.use(express.urlencoded());
+// to set layout
+app.use(expressLayouts);
 
 
 // to use static folder in our project
 app.use(express.static('./assets'));
+app.set('layout extractStyles',true);
+app.set('layout extractScripts',true);
 
 // to set view engine
 app.set('view engine', 'ejs');
@@ -60,6 +63,7 @@ app.use(passport.setAuthenticatedUser);
 // using connect flash to  show notification
 app.use(connectFlash());
 app.use(customMware.setFlash);
+
 
 
 // to set routes

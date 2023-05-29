@@ -116,8 +116,10 @@ module.exports.updatePassword = async function (req, res) {
 // to signout
 module.exports.destroySession = function(req,res){
     req.logout(function(err){
+        if(err){
       req.flash('error','Something Went Wrong!!');
-    });
-    req.flash('success','Logged out successfully!!');
+        }
+   req.flash('success','Logged out successfully!!');
     return res.redirect('/');
+    });
   }
