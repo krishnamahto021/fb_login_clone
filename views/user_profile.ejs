@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 
 <body>
-    <h1>this is user's page</h1>
+    <p>hey !!<strong><%=user.name%></strong> welcome </p>
+
     <%if(locals.user){%>
         <a href="/users/sign-out">sign-out</a>
     <%}%>

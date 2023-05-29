@@ -1,21 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=title%></title>
-</head>
+<link rel="stylesheet" href="/css/user_sign_up.css">
 <body>
-    <form action="/users/create" method="post">
-        <input type="text" name="name" placeholder="Enter your Name" required>
-        <input type="email" name="email" placeholder="Enter your Email" required>
-        <input type="password" name="password" placeholder="Enter your password" required>
-        <input type="password" name="confirm_password" placeholder="Re-enter your password" required>
-        <button type="submit">Create Account</button>
+    <form id='user-sign-up-form' action="/users/create" method="post">
+        <input type="text" name="name" placeholder="Enter your Name" required> <br>
+        <input type="email" name="email" placeholder="Enter your Email" required><br>
+        <input type="password" name="password" placeholder="Enter your password" required><br>
+        <input type="password" name="confirm_password" placeholder="Re-enter your password" required><br>
+        <button id="create-account-btn" type="submit">Create Account</button>
     </form>
-
-    
-    
 </body>
-</html>

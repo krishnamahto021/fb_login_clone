@@ -99,3 +99,14 @@ body {
     justify-content: center;
     margin: 120px;
 }
+
+
+#google-authentication {
+    text-decoration: none;
+    margin-left: 3.25rem;
+    margin-top: auto;
+    padding: 17px;
+    display: block;
+    font-size: 17px;
+
+}
