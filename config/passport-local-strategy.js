@@ -32,8 +32,8 @@ passport.use(new LocalStrategy(
         // find a user and establish it identity
         try{
         const user = await User.findOne({email:email});
-        const isMatch = await bcrypt.compare(req.body.password,user.password); // matches the encrypted password with user password of form
-        console.log(isMatch);
+        const isMatch = await bcrypt.compare(password,user.password); // matches the encrypted password with user password of form
+        // console.log(isMatch);
         if(!user){
             // console.log('Invalid User');
             req.flash('error','Invalid Email');

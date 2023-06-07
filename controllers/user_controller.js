@@ -30,7 +30,7 @@ module.exports.create = async function (req, res) {
             req.flash('success','Created Account Successfully!');
             return res.redirect('/');
         } else {
-            console.log('User already registered!!');
+            req.flash('error','User Already Exists!');
             return res.redirect('/');
         }
 
